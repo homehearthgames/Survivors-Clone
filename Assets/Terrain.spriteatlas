@@ -1,0 +1,122 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Terrain
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 96e6f8e8066727145921d260a2430f53, type: 3}
+    - {fileID: 2800000, guid: 5d2a636f8ecf67c469d44d311b903be0, type: 3}
+    - {fileID: 2800000, guid: a68f58113bea35643a101f2bc806c7af, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 854598318, guid: a68f58113bea35643a101f2bc806c7af, type: 3}
+  - {fileID: 7919750, guid: a68f58113bea35643a101f2bc806c7af, type: 3}
+  - {fileID: 1354152209, guid: a68f58113bea35643a101f2bc806c7af, type: 3}
+  - {fileID: 581568351, guid: a68f58113bea35643a101f2bc806c7af, type: 3}
+  - {fileID: 1160346055, guid: a68f58113bea35643a101f2bc806c7af, type: 3}
+  - {fileID: -516450295, guid: 96e6f8e8066727145921d260a2430f53, type: 3}
+  - {fileID: 1714625989, guid: 96e6f8e8066727145921d260a2430f53, type: 3}
+  - {fileID: -33008611, guid: 96e6f8e8066727145921d260a2430f53, type: 3}
+  - {fileID: 564166631, guid: 96e6f8e8066727145921d260a2430f53, type: 3}
+  - {fileID: 1334113630, guid: 96e6f8e8066727145921d260a2430f53, type: 3}
+  - {fileID: 1031852824, guid: 96e6f8e8066727145921d260a2430f53, type: 3}
+  - {fileID: -143759319, guid: 96e6f8e8066727145921d260a2430f53, type: 3}
+  - {fileID: -1300867612, guid: 96e6f8e8066727145921d260a2430f53, type: 3}
+  - {fileID: 25068956, guid: 96e6f8e8066727145921d260a2430f53, type: 3}
+  - {fileID: -2080007324, guid: 96e6f8e8066727145921d260a2430f53, type: 3}
+  - {fileID: 279072005, guid: 96e6f8e8066727145921d260a2430f53, type: 3}
+  - {fileID: 225992878, guid: 5d2a636f8ecf67c469d44d311b903be0, type: 3}
+  - {fileID: -1782104484, guid: 5d2a636f8ecf67c469d44d311b903be0, type: 3}
+  - {fileID: 785470764, guid: 5d2a636f8ecf67c469d44d311b903be0, type: 3}
+  - {fileID: -1966529416, guid: 5d2a636f8ecf67c469d44d311b903be0, type: 3}
+  - {fileID: -736810634, guid: 5d2a636f8ecf67c469d44d311b903be0, type: 3}
+  - {fileID: -1109282505, guid: 5d2a636f8ecf67c469d44d311b903be0, type: 3}
+  - {fileID: 292477120, guid: 5d2a636f8ecf67c469d44d311b903be0, type: 3}
+  - {fileID: 1333608618, guid: 5d2a636f8ecf67c469d44d311b903be0, type: 3}
+  - {fileID: 1762487290, guid: 5d2a636f8ecf67c469d44d311b903be0, type: 3}
+  - {fileID: 1577579433, guid: 5d2a636f8ecf67c469d44d311b903be0, type: 3}
+  - {fileID: 943775009, guid: 5d2a636f8ecf67c469d44d311b903be0, type: 3}
+  - {fileID: 334399337, guid: 5d2a636f8ecf67c469d44d311b903be0, type: 3}
+  - {fileID: 647184524, guid: 5d2a636f8ecf67c469d44d311b903be0, type: 3}
+  - {fileID: -1693053703, guid: 5d2a636f8ecf67c469d44d311b903be0, type: 3}
+  - {fileID: -912119929, guid: 5d2a636f8ecf67c469d44d311b903be0, type: 3}
+  - {fileID: -434735417, guid: 5d2a636f8ecf67c469d44d311b903be0, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Sprite-Trees_1
+  - Sprite-Trees_0
+  - Sprite-Trees_3
+  - Sprite-Trees_2
+  - Sprite-Trees_4
+  - Desert-Tiles_10
+  - Desert-Tiles_9
+  - Desert-Tiles_8
+  - Desert-Tiles_1
+  - Desert-Tiles_0
+  - Desert-Tiles_3
+  - Desert-Tiles_2
+  - Desert-Tiles_5
+  - Desert-Tiles_4
+  - Desert-Tiles_7
+  - Desert-Tiles_6
+  - Sprite-Trees 1_8
+  - Sprite-Trees 1_9
+  - Sprite-Trees 1_0
+  - Sprite-Trees 1_1
+  - Sprite-Trees 1_2
+  - Sprite-Trees 1_3
+  - Sprite-Trees 1_4
+  - Sprite-Trees 1_5
+  - Sprite-Trees 1_6
+  - Sprite-Trees 1_7
+  - Sprite-Trees 1_13
+  - Sprite-Trees 1_12
+  - Sprite-Trees 1_11
+  - Sprite-Trees 1_10
+  - Sprite-Trees 1_15
+  - Sprite-Trees 1_14
+  m_RenderDataMap: {}
+  m_Tag: Terrain
+  m_IsVariant: 0
