@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 5621703465047265637}
   - component: {fileID: 5621703465047265633}
+  - component: {fileID: 5621703465047265638}
   - component: {fileID: 5621703465047265639}
   - component: {fileID: 5621703465047265636}
   - component: {fileID: 1732431485680253279}
-  - component: {fileID: 2793987007362902206}
   m_Layer: 0
-  m_Name: FireballPiercing
+  m_Name: Meteor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: -625912905
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: -18560168, guid: 045533d15a3a481409d66472736bd3a0, type: 3}
+  m_Sprite: {fileID: 1510862725, guid: 0af2ff7542048024897942840f7b8e5b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -88,6 +88,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5621703465047265638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5621703465047265642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe192db9536b3e4da7bd4108aab5d8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shooter: 0
+  damageTextPrefab: {fileID: 5508873206463882626, guid: 6e1aa1b8f5dcc844395f15a7f9e318a6, type: 3}
+  damageAmount: 8
 --- !u!58 &5621703465047265639
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -138,23 +153,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: -18560168, guid: 045533d15a3a481409d66472736bd3a0, type: 3}
-  - {fileID: -621765963, guid: 045533d15a3a481409d66472736bd3a0, type: 3}
+  - {fileID: -1590742762, guid: 0af2ff7542048024897942840f7b8e5b, type: 3}
+  - {fileID: 1510862725, guid: 0af2ff7542048024897942840f7b8e5b, type: 3}
   loop: 1
   speedModifier: 0.25
   spriteRenderer: {fileID: 5621703465047265633}
   randomStartingFrame: 0
---- !u!114 &2793987007362902206
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5621703465047265642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5567929a5bba6745ade5251b00fb050, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageTextPrefab: {fileID: 5508873206463882626, guid: 6e1aa1b8f5dcc844395f15a7f9e318a6, type: 3}
-  damageAmount: 1

@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void SetStats()
     {
-        speed = playerStatsHandler.speed;
+        speed = playerStatsHandler.moveSpeed;
     }
 
     // Update is called once per frame

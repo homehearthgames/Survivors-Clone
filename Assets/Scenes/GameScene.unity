@@ -17790,9 +17790,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   virtualCamera: {fileID: 1137542449}
-  speed: 4
+  moveSpeed: 20
   currentHealth: 10
   maxHealth: 10
+  recovery: 3
+  power: 0
+  attackSpeed: 0
+  duration: 0
+  range: 0
+  cooldown: 0
   playerStats: {fileID: 11400000, guid: 7b51aa177930e8044bfbfa262fa540e3, type: 2}
   currentLevel: 1
   currentExperience: 0
@@ -17809,9 +17815,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f461d1cfb592178499dae5955fdcb6ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 5621703465047265642, guid: 258cbb330a0fd614a819742e805af941, type: 3}
-  projectileSpeed: 6
-  fireRate: 5
+  projectilePrefab: {fileID: 5621703465047265642, guid: db61092c08ef4a44981c29d418527eb3, type: 3}
+  projectileSpeed: 4
+  fireRate: 3
+  scaling: 0
+  damageCoefficient: 2
 --- !u!114 &1058086154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17837,7 +17845,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 127f475ae89941d4ab188c122e21bfef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 5621703465047265642, guid: a83ff2ccb85a2c54d92ecc934e604794, type: 3}
+  projectilePrefab: {fileID: 5621703465047265642, guid: 5823f2c3a377a7447a3842f953b40878, type: 3}
   projectileSpeed: 8
   fireRate: 0.25
   numberOfProjectiles: 12

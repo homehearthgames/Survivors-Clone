@@ -7,11 +7,18 @@ public class PlayerStatsHandler : MonoBehaviour
     public Cinemachine.CinemachineVirtualCamera virtualCamera;
 
     // Create public variables for speed, current health, and max health.
-    public float speed;
+    public float moveSpeed;
     public float currentHealth;
     public float maxHealth;
-    public PlayerStats playerStats;
+    public float recovery;
+    public float power;
+    public float attackSpeed;
+    public float duration;
+    public float range;
+    public float cooldown;
 
+    public PlayerStats playerStats;
+    
     [Header("Level Stats")]
     [SerializeField] float currentLevel = 1f;
     [SerializeField] public float currentExperience = 0f;
@@ -20,9 +27,15 @@ public class PlayerStatsHandler : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
-        speed = playerStats.Speed;
+        moveSpeed = playerStats.MoveSpeed;
         maxHealth = playerStats.Health;
         currentHealth = maxHealth;
+        recovery = playerStats.Recovery;
+        power = playerStats.Power;
+        attackSpeed = playerStats.AttackSpeed;
+        duration = playerStats.Duration;
+        range = playerStats.Range;
+        cooldown = playerStats.Cooldown;
     }
 
     // Update is called once per frame
@@ -79,6 +92,6 @@ IEnumerator StopShake(float delay)
     // Call this function to change the player speed.
     public void ChangeSpeed(float newSpeed)
     {
-        speed = newSpeed;
+        moveSpeed = newSpeed;
     }
 }

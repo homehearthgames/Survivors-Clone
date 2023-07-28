@@ -12,11 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df217ce1b38bd8449bf7dd742dcae76d, type: 3}
   m_Name: Wizard
   m_EditorClassIdentifier: 
-  goldReward: 0
   health: 20
-  speed: 4
   attackDamage: 0
   projectileSpeed: 3
   projectileDamage: 5
   rangedAttackSpeed: 2
   attackRange: 3
+  maxHealth: 15
+  moveSpeed: 4
+  recovery: 2
+  power: 2
+  attackSpeed: 2
+  duration: 2
+  range: 2
+  cooldown: 2
