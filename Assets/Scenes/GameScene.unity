@@ -17625,6 +17625,7 @@ GameObject:
   - component: {fileID: 1058086153}
   - component: {fileID: 1058086155}
   - component: {fileID: 1058086156}
+  - component: {fileID: 1058086157}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -17810,7 +17811,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1058086144}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f461d1cfb592178499dae5955fdcb6ec, type: 3}
   m_Name: 
@@ -17840,7 +17841,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1058086144}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 127f475ae89941d4ab188c122e21bfef, type: 3}
   m_Name: 
@@ -17848,8 +17849,9 @@ MonoBehaviour:
   projectilePrefab: {fileID: 5621703465047265642, guid: 5823f2c3a377a7447a3842f953b40878, type: 3}
   projectileSpeed: 8
   fireRate: 0.25
+  scaling: 1
+  damageCoefficient: 1
   numberOfProjectiles: 12
-  projectileDamage: 5
 --- !u!114 &1058086156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17857,7 +17859,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1058086144}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b5cb872affa3f845946dc7724638dba, type: 3}
   m_Name: 
@@ -17867,6 +17869,25 @@ MonoBehaviour:
   fireRate: 2
   orbitRadius: 1.25
   orbitSpeed: 4
+  scaling: 0
+  damageCoefficient: 1
+--- !u!114 &1058086157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058086144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c727fc1e046819d47979d426fd8d9c54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileData:
+  - {fileID: 11400000, guid: 28d8fc1ffe1f493499cdf29540c375a2, type: 2}
+  - {fileID: 11400000, guid: 5050de7ac2c548a409a513cc0598f8f2, type: 2}
+  - {fileID: 11400000, guid: 3dffa54fcb2f7fb48a9b38c02f037db2, type: 2}
+  - {fileID: 11400000, guid: 3f797ed4b54a2f243b0edd7d317ece98, type: 2}
 --- !u!1 &1137542446
 GameObject:
   m_ObjectHideFlags: 0

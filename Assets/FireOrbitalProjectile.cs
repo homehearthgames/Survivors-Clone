@@ -9,10 +9,22 @@ public class FireOrbitalProjectile : MonoBehaviour
     public float fireRate = 1.0f;
     public float orbitRadius = 5.0f;
     public float orbitSpeed = 10f;
+    public PlayerStatType scaling;
+    public float damageCoefficient = 1f;
+
     private float nextFireTime = 0.0f;
     private List<GameObject> projectiles = new List<GameObject>();
     private List<float> angles = new List<float>();
     private bool recalculateAngles = false;
+    private float damageAmount = 1f;
+    private NearestEnemyTracker enemyTracker;
+    private PlayerStatsHandler playerStatsHandler;
+
+    void Start()
+    {
+        enemyTracker = GetComponent<NearestEnemyTracker>();
+        playerStatsHandler = GetComponent<PlayerStatsHandler>();
+    }
 
     void Update()
     {
@@ -63,11 +75,40 @@ public class FireOrbitalProjectile : MonoBehaviour
 
         Projectile projectile = projectileInstance.GetComponent<Projectile>();
         projectile.shooter = Projectile.Shooter.Player;
+        // Calculate and set the damage amount
+        damageAmount = 1 * damageCoefficient * GetPlayerStat(playerStatsHandler);
+        projectile.damageAmount = damageAmount;
+        
         projectiles.Add(projectileInstance);
 
         angles.Add(0);
         recalculateAngles = true;
 
         nextFireTime = Time.time + 1.0f / fireRate;
+    }
+
+    private float GetPlayerStat(PlayerStatsHandler playerStatsHandler)
+    {
+        switch(scaling)
+        {
+            case PlayerStatType.MaxHealth: 
+                return playerStatsHandler.maxHealth;
+            case PlayerStatType.MoveSpeed: 
+                return playerStatsHandler.moveSpeed;
+            case PlayerStatType.Recovery: 
+                return playerStatsHandler.recovery;
+            case PlayerStatType.Power: 
+                return playerStatsHandler.power;
+            case PlayerStatType.AttackSpeed: 
+                return playerStatsHandler.attackSpeed;
+            case PlayerStatType.Duration: 
+                return playerStatsHandler.duration;
+            case PlayerStatType.Range: 
+                return playerStatsHandler.range;
+            case PlayerStatType.Cooldown: 
+                return playerStatsHandler.cooldown;
+            default:
+                return 1f;
+        }
     }
 }
