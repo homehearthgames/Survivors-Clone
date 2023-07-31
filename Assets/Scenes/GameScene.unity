@@ -17798,7 +17798,7 @@ MonoBehaviour:
   power: 0
   attackSpeed: 0
   duration: 0
-  range: 0
+  range: 1
   cooldown: 0
   playerStats: {fileID: 11400000, guid: 7b51aa177930e8044bfbfa262fa540e3, type: 2}
   currentLevel: 1
@@ -17884,10 +17884,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileData:
-  - {fileID: 11400000, guid: 28d8fc1ffe1f493499cdf29540c375a2, type: 2}
   - {fileID: 11400000, guid: 5050de7ac2c548a409a513cc0598f8f2, type: 2}
-  - {fileID: 11400000, guid: 3dffa54fcb2f7fb48a9b38c02f037db2, type: 2}
-  - {fileID: 11400000, guid: 3f797ed4b54a2f243b0edd7d317ece98, type: 2}
 --- !u!1 &1137542446
 GameObject:
   m_ObjectHideFlags: 0

@@ -58,6 +58,7 @@ public class FireBasicProjectile : MonoBehaviour
         PlayerStatsHandler playerStatsHandler = GetComponent<PlayerStatsHandler>();
 
         projectile.shooter = Projectile.Shooter.Player;
+        projectile.piercing = data.piercing; //added line to set piercing property
         // Rotate the projectile to face the target
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         projectileInstance.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);

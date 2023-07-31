@@ -18,3 +18,4 @@ MonoBehaviour:
   scaling: 0
   damageCoefficient: 2
   autoLock: 1
+  piercing: 1

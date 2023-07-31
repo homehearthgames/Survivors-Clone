@@ -7,16 +7,19 @@ public class Projectile : MonoBehaviour
     public enum Shooter { Player, Enemy }
 
     public Shooter shooter;
+    public bool piercing; //added piercing property
 
     [SerializeField] GameObject damageTextPrefab;
     public float damageAmount = 1;
 
     private void Start() 
     {
-        // Destroy(gameObject, 20f);
+        if (!piercing) 
+        {
+            Destroy(gameObject, 10f); //destroys after 10 seconds if not piercing
+        }
     }
 
-    // This function is called when a collision is detected
     void OnTriggerEnter2D(Collider2D other)
     {
         switch (shooter)
@@ -26,7 +29,7 @@ public class Projectile : MonoBehaviour
                 if (other.gameObject.CompareTag("Enemy"))
                 {
                     EnemyStatsHandler enemyStatsHandler = other.GetComponent<EnemyStatsHandler>();
-                    DamageTarget(enemyStatsHandler);
+                    DealDamage(enemyStatsHandler);
                 }
                 break;
             case Shooter.Enemy:
@@ -34,13 +37,13 @@ public class Projectile : MonoBehaviour
                 if (other.gameObject.CompareTag("Player"))
                 {
                     PlayerStatsHandler playerStatsHandler = other.GetComponent<PlayerStatsHandler>();
-                    DamageTarget(playerStatsHandler);
+                    DealDamage(playerStatsHandler);
                 }
                 break;
         }
     }
 
-    private void DamageTarget(object target)
+    private void DealDamage(object target)
     {
         if (target is PlayerStatsHandler playerStatsHandler)
         {
@@ -61,7 +64,11 @@ public class Projectile : MonoBehaviour
         {
             Debug.Log("No TextMeshPro component found");
         }
-        // Destroy the projectile itself
-        Destroy(this.gameObject);
+        
+        // If the projectile is not piercing, destroy it after it has dealt damage.
+        if (!piercing) 
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
