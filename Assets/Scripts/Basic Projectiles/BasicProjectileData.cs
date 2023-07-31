@@ -10,4 +10,6 @@ public class BasicProjectileData : ScriptableObject
     public float fireRate;
     public PlayerStatType scaling;
     public float damageCoefficient;
+    public bool autoLock;  // Checkbox to determine fire type
 }
+

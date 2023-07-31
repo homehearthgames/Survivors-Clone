@@ -14,6 +14,8 @@ public enum PlayerStatType
     Cooldown
 }
 
+
+
 public class FireProjectile : MonoBehaviour
 {
     public GameObject projectilePrefab;

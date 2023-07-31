@@ -17,3 +17,4 @@ MonoBehaviour:
   fireRate: 2
   scaling: 0
   damageCoefficient: 1
+  autoLock: 1

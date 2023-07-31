@@ -16,4 +16,5 @@ MonoBehaviour:
   projectileSpeed: 5
   fireRate: 5
   scaling: 0
-  damageCoefficient: 1
+  damageCoefficient: 1.5
+  autoLock: 0
