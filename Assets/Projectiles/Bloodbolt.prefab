@@ -100,8 +100,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shooter: 0
+  piercing: 0
   damageTextPrefab: {fileID: 5508873206463882626, guid: 6e1aa1b8f5dcc844395f15a7f9e318a6, type: 3}
-  damageAmount: 3
+  damageAmount: 1
 --- !u!58 &5621703465047265639
 CircleCollider2D:
   m_ObjectHideFlags: 0

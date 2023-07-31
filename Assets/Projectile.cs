@@ -51,18 +51,19 @@ public class Projectile : MonoBehaviour
         }
         else if (target is EnemyStatsHandler enemyStatsHandler)
         {
-            enemyStatsHandler.TakeDamage(damageAmount);
-        }
+            
 
         var damageText = Instantiate(damageTextPrefab, transform.position + Vector3.up, Quaternion.identity);
         var textMesh = damageText.GetComponentsInChildren<TMPro.TextMeshProUGUI>();
-        if (textMesh != null)
-        {
-            textMesh[0].text = damageAmount.ToString();
-        }
-        else
-        {
-            Debug.Log("No TextMeshPro component found");
+            if (textMesh != null)
+            {
+                textMesh[0].text = damageAmount.ToString();
+            }
+            else
+            {
+                Debug.Log("No TextMeshPro component found");
+            }
+            enemyStatsHandler.TakeDamage(damageAmount);
         }
         
         // If the projectile is not piercing, destroy it after it has dealt damage.

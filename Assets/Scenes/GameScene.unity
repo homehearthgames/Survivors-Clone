@@ -17885,6 +17885,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileData:
   - {fileID: 11400000, guid: 5050de7ac2c548a409a513cc0598f8f2, type: 2}
+  - {fileID: 11400000, guid: 28d8fc1ffe1f493499cdf29540c375a2, type: 2}
+  - {fileID: 11400000, guid: 3dffa54fcb2f7fb48a9b38c02f037db2, type: 2}
 --- !u!1 &1137542446
 GameObject:
   m_ObjectHideFlags: 0
