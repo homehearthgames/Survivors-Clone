@@ -11,7 +11,7 @@ public class DamagePlayer : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         // Check if the collided object has the tag 'player'
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
             PlayerStatsHandler playerStatsHandler = collision.gameObject.GetComponent<PlayerStatsHandler>();
             playerStatsHandler.TakeDamage(meleeDamage);

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf7de70ad1870d740929e71e404a101b, type: 3}
   m_Name: Fireball
   m_EditorClassIdentifier: 
+  projectileType: 0
   projectilePrefab: {fileID: 5621703465047265642, guid: 258cbb330a0fd614a819742e805af941, type: 3}
   projectileSpeed: 2
   fireRate: 1

@@ -16,7 +16,6 @@ public class PlayerStatsHandler : MonoBehaviour
     public float duration;
     public float range;
     public float cooldown;
-
     public PlayerStats playerStats;
     
     [Header("Level Stats")]
@@ -54,9 +53,10 @@ public class PlayerStatsHandler : MonoBehaviour
         }
     }
 
+
 public void TakeDamage(float damage)
 {
-    Debug.Log("test");
+    
     currentHealth -= damage;
 
     // Add these lines to activate the camera shake

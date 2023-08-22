@@ -1,34 +1,58 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
 public class GameTimer : MonoBehaviour
 {
     public TextMeshProUGUI countdownText;
-    public float countdownTime = 60.0f;
+    private float countdownTime;
+    private bool isOvertime = false;
 
-    void Start()
+    private void Start()
     {
-        StartCoroutine(CountdownToStart());
+        SetInitialCountdownTime();
+        StartCoroutine(CountdownRoutine());
     }
 
-    IEnumerator CountdownToStart()
+    private void SetInitialCountdownTime()
     {
-        while (countdownTime > 0)
+        countdownTime = 25.0f + (GameManager.Instance.currentRound * 5); // Accessing currentRound from GameManager
+    }
+
+    IEnumerator CountdownRoutine()
+    {
+        while (true)
         {
             int minutes = Mathf.FloorToInt(countdownTime / 60F);
             int seconds = Mathf.FloorToInt(countdownTime - minutes * 60);
 
             if (minutes > 0)
-                countdownText.text = string.Format("{0:00}m {1:00}s", minutes, seconds);
+                countdownText.text = string.Format("{0}m {1}s", minutes, seconds);
             else
-                countdownText.text = string.Format("{0:00}s", seconds);
+                countdownText.text = string.Format("{0}s", seconds);
 
             yield return new WaitForSeconds(1.0f);
-            countdownTime--;
-        }
 
-        countdownText.text = "Time's Up!";
+            if (!isOvertime)
+            {
+                countdownTime--;
+
+                if (countdownTime <= 0)
+                {
+                    EnterOvertimeMode();
+                }
+            }
+            else
+            {
+                countdownTime++;
+            }
+        }
+    }
+
+
+    private void EnterOvertimeMode()
+    {
+        isOvertime = true;
+        countdownText.color = Color.red;
     }
 }

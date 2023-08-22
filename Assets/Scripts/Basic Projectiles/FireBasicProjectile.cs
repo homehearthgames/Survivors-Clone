@@ -73,26 +73,17 @@ public class FireBasicProjectile : MonoBehaviour
 
     private float GetPlayerStat(PlayerStatsHandler playerStatsHandler, PlayerStatType scaling)
     {
-        switch(scaling)
+        return scaling switch
         {
-            case PlayerStatType.MaxHealth: 
-                return playerStatsHandler.maxHealth;
-            case PlayerStatType.MoveSpeed: 
-                return playerStatsHandler.moveSpeed;
-            case PlayerStatType.Recovery: 
-                return playerStatsHandler.recovery;
-            case PlayerStatType.Power: 
-                return playerStatsHandler.power;
-            case PlayerStatType.AttackSpeed: 
-                return playerStatsHandler.attackSpeed;
-            case PlayerStatType.Duration: 
-                return playerStatsHandler.duration;
-            case PlayerStatType.Range: 
-                return playerStatsHandler.range;
-            case PlayerStatType.Cooldown: 
-                return playerStatsHandler.cooldown;
-            default:
-                return 1f;
-        }
+            PlayerStatType.MaxHealth => playerStatsHandler.maxHealth,
+            PlayerStatType.MoveSpeed => playerStatsHandler.moveSpeed,
+            PlayerStatType.Recovery => playerStatsHandler.recovery,
+            PlayerStatType.Power => playerStatsHandler.power,
+            PlayerStatType.AttackSpeed => playerStatsHandler.attackSpeed,
+            PlayerStatType.Duration => playerStatsHandler.duration,
+            PlayerStatType.Range => playerStatsHandler.range,
+            PlayerStatType.Cooldown => playerStatsHandler.cooldown,
+            _ => 1f,
+        };
     }
 }
