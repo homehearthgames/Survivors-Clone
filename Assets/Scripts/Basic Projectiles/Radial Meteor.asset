@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf7de70ad1870d740929e71e404a101b, type: 3}
-  m_Name: Icelance
+  m_Name: Radial Meteor
   m_EditorClassIdentifier: 
-  projectileType: 0
-  projectilePrefab: {fileID: 5621703465047265642, guid: a83ff2ccb85a2c54d92ecc934e604794, type: 3}
-  projectileSpeed: 5
-  fireRate: 2
-  scaling: 6
-  damageCoefficient: 1
-  autoLock: 1
-  piercing: 1
+  projectileType: 1
+  projectilePrefab: {fileID: 5621703465047265642, guid: 378b04e39e952a446a16298977faf66f, type: 3}
+  projectileSpeed: 3
+  fireRate: 1
+  scaling: 3
+  damageCoefficient: 6
+  autoLock: 0
+  piercing: 0
+  numberOfProjectiles: 8

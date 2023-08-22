@@ -25,4 +25,7 @@ public class BasicProjectileData : ScriptableObject
     public float damageCoefficient;
     public bool autoLock;
     public bool piercing;
+
+    // Radial type properties
+    public int numberOfProjectiles = 8; // the number of projectiles to be fired in a radial pattern
 }

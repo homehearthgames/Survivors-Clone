@@ -10,19 +10,17 @@ public class FireBasicProjectile : MonoBehaviour
     private float[] nextFireTimes;
     private float damageAmount = 1f;
 
-    // Start is called before the first frame update
     void Start()
     {
         enemyTracker = GetComponent<NearestEnemyTracker>();
         rb = GetComponent<Rigidbody2D>();
-        nextFireTimes = new float[projectileData.Length]; // One timer for each projectile data
-        directionOfMovement = Vector2.right; // Default initial direction
+        nextFireTimes = new float[projectileData.Length];
+        directionOfMovement = Vector2.right;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (rb.velocity.magnitude > 0) // Update direction only when moving
+        if (rb.velocity.magnitude > 0)
         {
             directionOfMovement = rb.velocity.normalized;
         }
@@ -42,11 +40,20 @@ public class FireBasicProjectile : MonoBehaviour
                 }
                 else
                 {
-                    direction = directionOfMovement; // Use last direction even when not moving
+                    direction = directionOfMovement;
                 }
 
-                FireAtEnemy(direction, projectileData[i]);
-                nextFireTimes[i] = Time.time + 1.0f / projectileData[i].fireRate; // calculate the next time to fire based on the firing rate
+                switch (projectileData[i].projectileType)
+                {
+                    case ProjectileType.Basic:
+                        FireAtEnemy(direction, projectileData[i]);
+                        break;
+                    case ProjectileType.Radial:
+                        FireRadial(projectileData[i]);
+                        break;
+                }
+
+                nextFireTimes[i] = Time.time + 1.0f / projectileData[i].fireRate;
             }
         }
     }
@@ -58,17 +65,38 @@ public class FireBasicProjectile : MonoBehaviour
         PlayerStatsHandler playerStatsHandler = GetComponent<PlayerStatsHandler>();
 
         projectile.shooter = Projectile.Shooter.Player;
-        projectile.piercing = data.piercing; //added line to set piercing property
-        // Rotate the projectile to face the target
+        projectile.piercing = data.piercing;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         projectileInstance.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
         Rigidbody2D rb = projectileInstance.GetComponent<Rigidbody2D>();
         rb.velocity = direction * data.projectileSpeed;
 
-        // Calculate and set the damage amount
         damageAmount = 1 * data.damageCoefficient * GetPlayerStat(playerStatsHandler, data.scaling);
         projectile.damageAmount = damageAmount;
+    }
+
+    void FireRadial(BasicProjectileData data)
+    {
+        float angleStep = 360f / data.numberOfProjectiles;
+        float angle = 0f;
+        for (int i = 0; i <= data.numberOfProjectiles - 1; i++)
+        {
+            float projectileDirXposition = transform.position.x + Mathf.Sin((angle * Mathf.PI) / 180) * 1f;
+            float projectileDirYposition = transform.position.y + Mathf.Cos((angle * Mathf.PI) / 180) * 1f;
+
+            Vector2 projectileVector = new Vector2(projectileDirXposition, projectileDirYposition);
+            Vector2 projectileMoveDirection = (projectileVector - new Vector2(transform.position.x, transform.position.y)).normalized;
+
+            float rotZ = Mathf.Atan2(projectileMoveDirection.y, projectileMoveDirection.x) * Mathf.Rad2Deg;
+
+            GameObject tempObj = Instantiate(data.projectilePrefab, transform.position, Quaternion.Euler(0f, 0f, rotZ));
+            tempObj.GetComponent<Rigidbody2D>().velocity =
+                new Vector2(projectileMoveDirection.x * data.projectileSpeed,
+                            projectileMoveDirection.y * data.projectileSpeed);
+
+            angle += angleStep;
+        }
     }
 
     private float GetPlayerStat(PlayerStatsHandler playerStatsHandler, PlayerStatType scaling)
